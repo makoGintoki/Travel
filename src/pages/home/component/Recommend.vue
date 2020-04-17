@@ -2,7 +2,9 @@
     <div >
         <div class="title">热销推荐</div>
         <ul>
-           <li class="item border-bottom" v-for="item of RecommendList" :key="item.id">
+           <li  class="item border-bottom" 
+                v-for="item of list" 
+                :key="item.id">
                 <img class="item-img"  :src="item.imgUrl" >
                 <div class="item-info">
                     <div class="item-title">
@@ -21,35 +23,11 @@
 <script>
 export default {
   name: 'Recommend',
-  data: function () {
-    return {
-      RecommendList: [
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '故宫啦啦啦',
-          desc: '我是描述哈哈哈哈哈哈哈哈哈哈哈哈哈啊顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶哈哈哈哈啊'
-        },
-        {
-          id: '002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '故宫啦啦啦',
-          desc: '我是描述哈哈哈哈哈哈哈哈哈哈哈哈哈啊顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶哈哈哈哈啊'
-        },
-        {
-          id: '003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '故宫啦啦啦',
-          desc: '我是描述哈哈哈哈哈哈哈哈哈哈哈哈哈啊顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶哈哈哈哈啊'
-        }
-      ]
-    }
-  }
+  props: {list: Array}
 }
 </script>
 
 <style lang="stylus" scoped>
- @import '~styles/varibles.styl';
  @import '~styles/textcontrol.styl';
  .title
      background-color :#eee
@@ -77,7 +55,7 @@ export default {
            line-height :.4rem
            height :.4rem
            font-size :.32rem
-           color :$dartText
+           color :#999
            controlEllipsis()
        .item-btn
            background-color :#ff9300

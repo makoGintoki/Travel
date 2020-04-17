@@ -1,0 +1,20 @@
+<template>
+    <div>
+        <city-header></city-header>
+    </div>
+</template>
+
+<script>
+import CityHeader from '@/pages/city/component/CityHeader'
+
+export default {
+  name: 'City',
+  components: {
+    CityHeader: CityHeader
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+
+</style>

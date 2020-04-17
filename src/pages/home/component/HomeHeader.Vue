@@ -8,10 +8,11 @@
         <div class="header_input">
             <span  class="iconfont">&#xe86e;</span>
             输入城市/景点/游玩主题</div>
-        <div class="header_right">城市
+        <router-link to='/City'>
+            <div class="header_right">城市
             <span class="tangle-icon"></span>
-
         </div>
+        </router-link>
     </div>
 </template>
 
@@ -35,7 +36,7 @@ export default {
       line-height $headerHeight
       .btn-back
        margin-left :.12rem
-       font-size :.4rem
+       font-size :$backBtnText
      .header_input
       flex :1
       background-color :white
@@ -50,6 +51,7 @@ export default {
       min-width :1.1rem
       line-height :$headerHeight
       position :relative
+      color: white
       .tangle-icon
        position :absolute
        top:45%

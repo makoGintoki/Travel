@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper :options="swiperOptions">
+        <swiper :options="swiperOptions" >
             <swiper-slide v-for="(page,index) of pageCal"  :key="index">
               <div class="icon" v-for="item of page" :key="item.id">
                 <div class="icon-img">
@@ -16,64 +16,18 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: ['list'],
   data: function () {
     return {
       swiperOptions: {
         autoplay: false
-      },
-      iconList: [
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '景点门票'
-        },
-        {
-          id: '002',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '景点门票'
-        },
-        {
-          id: '003',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '景点门票'
-        },
-        {
-          id: '004',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '景点门票'
-        },
-        {
-          id: '005',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '景点门票'
-        },
-        {
-          id: '006',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '景点门票'
-        },
-        {
-          id: '007',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '景点门票'
-        },
-        {
-          id: '008',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '景点门票'
-        },
-        {
-          id: '009',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '景点门票'
-        }
-      ]
+      }
     }
   },
   computed: {
     pageCal: function () {
       const pages = []
-      this.iconList.forEach(function (item, index) {
+      this.list.forEach(function (item, index) {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
