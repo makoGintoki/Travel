@@ -42,9 +42,9 @@ export default {
           that.getAllData(res)
         })
     },
-    getAllData: function (res) {  
+    getAllData: function (res) {
       // console.log('响应2' + res.data)
-      if (res.data.ret && res.data.data){
+      if (res.data.ret && res.data.data) {
         const data = res.data.data
         this.swiperList = data.swiperList
         this.iconList = data.iconList
@@ -53,7 +53,7 @@ export default {
       }
     }
   },
-  mounted: function(){
+  mounted: function () {
     this.sendRequest()
   }
 }

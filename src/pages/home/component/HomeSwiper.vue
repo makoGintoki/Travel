@@ -25,8 +25,8 @@ export default {
     }
   },
   computed: {
-    showPics: function(){
-      return this.list.length;
+    showPics: function () {
+      return this.list.length
     }
   }
 }
