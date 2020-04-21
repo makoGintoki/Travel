@@ -9,7 +9,7 @@
             <span  class="iconfont">&#xe86e;</span>
             输入城市/景点/游玩主题</div>
         <router-link to='/City'>
-            <div class="header_right">城市
+            <div class="header_right">{{this.currentCity}}
             <span class="tangle-icon"></span>
         </div>
         </router-link>
@@ -17,8 +17,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
+  }
 }
 </script>
 
@@ -48,10 +54,13 @@ export default {
       padding-left .12rem
      .header_right
       padding-left:.24rem
+      padding-right :.24rem
       min-width :1.1rem
       line-height :$headerHeight
+      height :$headerHeight
       position :relative
       color: white
+      float :right
       .tangle-icon
        position :absolute
        top:45%

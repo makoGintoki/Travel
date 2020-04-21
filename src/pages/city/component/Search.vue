@@ -12,7 +12,8 @@
       <ul>
         <li class="search-item"
             v-for="item of list"
-            :key="item.id" >
+            :key="item.id"
+            @click="chooseCity(item.name)" >
             {{item.name}}
         </li>
         <li  class="search-item" v-show="hasData">
@@ -25,6 +26,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
   name: 'CitySearch',
   props: {
@@ -70,6 +72,13 @@ export default {
   },
   mounted: function () {
     this.scroll = new BScroll(this.$refs.content)
+  },
+  methods: {
+    chooseCity: function (city) {
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
   }
 }
 </script>
